@@ -1,0 +1,74 @@
+<% include_javascript "vault/fckeditor/fckeditor" %>
+<% include_javascript "vault/admin" %>
+<% include_javascript "vault/string" %>
+
+<script type="text/javascript">
+  window.onload = function() {
+    var oFCKeditor = new FCKeditor( 'page[content]' ) ;
+    oFCKeditor.BasePath = '/javascripts/vault/fckeditor/' ;
+    oFCKeditor.ReplaceTextarea() ;
+  }
+</script>
+
+
+<% form_for :page, :url => "" , :html => {:id =>"entry"} do |f| %>
+    <% if @page.new_record? -%>
+    <h2 id="new_page">
+      <%= "New Page"[:new_page] %> 
+      <%= link_to_function 'More', visual_effect(:toggle_slide , 'config'), :class => 'button configure', :title => "More Options" %>   
+    </h2>
+    <% else -%>
+    <h2 id="edit_page">
+      <%= "Edit Page"[:edit_page] %> 
+      <%= link_to_function 'More', visual_effect(:toggle_slide , 'config'), :class => 'button configure', :title => "More Options" %>   
+      
+    </h2>
+    <% end -%>
+    <div id="config" style="display:none">
+        <fieldset>
+          <legend>More options</legend>
+          <div class="group">
+            <label>
+              <%= "Slug"[:slug] %> <small>Auto-generated</small>
+              <%= text_field "page", "slug", {:size => nil} %>
+            </label>
+            <label>
+              <%= "Breadcrumb"[:breadcrumb] %> 
+              <%= text_field "page", "breadcrumb", {:size => nil} %> 
+            </label>
+          </div>               
+          <label><%= "Tags"[:tags] %> 
+            <%= text_field "page", "tag_list", {:size => nil} %>
+          </label>
+        </fieldset>
+    </div> 	    
+    
+    <fieldset>
+
+      <fieldset>
+        <fieldset>
+          <legend>Metadata</legend>
+          <label>
+            <%= "Status"[:status] %>
+            <%= select_tag "state", options_for_select(Page.states.inject({}) {|s,e| s[e.to_s[e]]=e; s}, @page.new_record? ? :draft : @page.current_state) %>
+          </label>
+        </fieldset>
+      </fieldset>   
+
+      <label for="page_title">
+        <%= "Page Title"[:page_title] %>
+        <%= text_field "page", "title", {:size => nil} %>
+      </label>
+     
+      <label>
+        Body
+        <%= render :partial => 'part', :locals => { :content => @page } %>
+      </label>
+
+
+      <%= updated_stamp @page %>
+
+      <%= save_model_button(@page) %> <%= save_model_and_continue_editing_button(@page) %>
+
+    </fieldset>
+<% end %>

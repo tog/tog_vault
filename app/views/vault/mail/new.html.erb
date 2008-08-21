@@ -1,0 +1,26 @@
+<!-- contacto -->
+
+    <div id="area_contact">
+      <% form_for :mail, :url => contact_create_path, :html => {:id => "f_contact", :method => "post"} do |f| -%>
+        <p class="center">
+          <strong>CONTACTO</strong>
+        </p>
+        
+        <dl class="cols clearfix">
+          <dt><label for="mail_name">Nombre</label></dt>
+          <dd><%= f.text_field :name, {:size => 40, :class => "textfield required wide", :value => params[:mail][:name]}  %></dd>
+          <dt><label for="mail_email">Dirección de email</label></dt>
+          <dd><%= f.text_field :email, {:size => 40, :class => "textfield required wide", :value => params[:mail][:email]} %></dd>
+          <dt><label for="mail_subject">Asunto</label></dt>
+          <dd><%= f.text_field :subject, {:size => 40, :class => "textfield required wide", :value => params[:mail][:subject]} %></dd>
+          <dt><label for="mail_comments">Comentarios</label></dt>
+          <dd>
+            <%= f.text_area :comments, {:cols => 40, :rows => 6, :class => "textfield required wide", :value => params[:mail][:comments]} %>
+            <br/>
+            Todos los campos son obligatorios
+            <br/>
+            <%= submit_tag 'Enviar', {:class=>"button", :style => "font-weight: bold; font-size: 1.2em;"} %>
+          </dd>
+        </dl>
+      <% end %>
+    </div><!-- #area_signup --><!-- contacto -->

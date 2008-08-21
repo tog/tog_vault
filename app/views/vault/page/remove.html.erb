@@ -1,0 +1,20 @@
+<% pages = pluralize(@page.children.count + 1, "Page"[:page]) -%>
+
+<h2 id="remove_article">
+  <%= "Remove #{pages}"[:remove_pages, {:pages => pages}] %>
+</h2>
+<p>                               
+  <%= "Are you sure you want to <strong class='warning'>permanently remove</strong> the following #{pages.downcase}?"[:are_you_sure_remove_pages, {:pages => pages.downcase}] %>
+</p>
+
+<table id="site-map" class="index" cellpadding="0" cellspacing="0" border="0">
+  <tbody>
+<%= render_node @page, :simple => true -%>
+  </tbody>
+</table>
+
+<% form_for :page, :url => "" do |f| %>
+
+  <p class="buttons"><%= submit_tag "Delete #{pages}"[:delete_pages_button, {:pages => pages}] %> or <%= link_to "Cancel"[:cancel], cms_page_index_url %></p>
+
+<% end %>
