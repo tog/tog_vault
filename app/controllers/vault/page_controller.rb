@@ -1,4 +1,4 @@
-class Vault::PageController < Meta::BaseController
+class Vault::PageController < Admin::BaseController
 
   def index
     @homepage = Page.find_by_parent_id(nil)
