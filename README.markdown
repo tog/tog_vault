@@ -12,9 +12,9 @@ Plugin requirements
 
 In case you haven't installed any of them previously you'll need the following plugins:
 
-* [acts_as_taggable_on_steroids](https://github.com/tog/tog/wikis/3rd-party-plugins-acts_as_taggable_on_steroids)
-* [acts_as_tree](https://github.com/tog/tog/wikis/3rd-party-plugins-acts_as_tree)
-* [acts_as_state_machine](https://github.com/tog/tog/wikis/3rd-party-plugins-acts_as_state_machine)
+* [acts\_as\_taggable\_on\_steroids](https://github.com/tog/tog/wikis/3rd-party-plugins-acts_as_taggable_on_steroids)
+* [acts\_as\_tree](https://github.com/tog/tog/wikis/3rd-party-plugins-acts_as_tree)
+* [acts\_as\_state\_machine](https://github.com/tog/tog/wikis/3rd-party-plugins-acts_as_state_machine)
 
 Follow each link above for a short installation guide incase you have to install them.			
 
