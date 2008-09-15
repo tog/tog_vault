@@ -30,7 +30,7 @@ ruby script/plugin install git@github.com:tog/tog_vault.git
 * Generate installation migration:
 
 <pre>
-ruby script/generate migration install_conversatio
+ruby script/generate migration install_vault
 </pre>
 
 	  with the following content:
