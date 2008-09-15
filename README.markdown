@@ -62,9 +62,9 @@ rake db:migrate
 More
 -------
 
-"https://github.com/tog/tog_vault":https://github.com/tog/tog_vault
+[http://github.com/tog/tog\_vault](http://github.com/tog/tog_vault)
 
-"https://github.com/tog/tog_vault/wikis":https://github.com/tog/tog_vault/wikis
+[http://github.com/tog/tog\_vault/wikis](http://github.com/tog/tog_vault/wikis)
 
 
 Copyright (c) 2008 Keras Software Development, released under the MIT license
