@@ -1,11 +1,11 @@
-<% include_javascript "vault/fckeditor/fckeditor" %>
-<% include_javascript "vault/admin" %>
-<% include_javascript "vault/string" %>
+<% include_javascript "/tog_vault/javascripts/fckeditor/fckeditor" %>
+<% include_javascript "/tog_vault/javascripts/admin" %>
+<% include_javascript "/tog_vault/javascripts/string" %>
 
 <script type="text/javascript">
   window.onload = function() {
     var oFCKeditor = new FCKeditor( 'page[content]' ) ;
-    oFCKeditor.BasePath = '/javascripts/vault/fckeditor/' ;
+    oFCKeditor.BasePath = '/tog_vault/javascripts/fckeditor/' ;
     oFCKeditor.ReplaceTextarea() ;
   }
 </script>
@@ -43,6 +43,8 @@
         </fieldset>
     </div> 	    
     
+
+
     <fieldset>
 
       <fieldset>
@@ -72,3 +74,18 @@
 
     </fieldset>
 <% end %>
+
+<script type="text/javascript">
+// <![CDATA[
+  $title = $('page_title');
+  $slug = $('page_slug');
+  $breadcrumb = $('page_breadcrumb');
+  $old_title = $title.value || '';
+  function title_updated() {
+    if ($old_title.toSlug() == $slug.value) $slug.value = $title.value.toSlug();
+    if ($old_title == $breadcrumb.value) $breadcrumb.value = $title.value;
+    $old_title = $title.value;
+  }
+  new Form.Element.Observer('page_title', 0.15, title_updated);
+// ]]>
+</script>

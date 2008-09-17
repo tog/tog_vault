@@ -9,7 +9,7 @@ module Vault::BaseHelper
   end
 
   def image(name, options = {})
-    image_tag(append_image_extension("vault/#{name}"), options)
+    image_tag(append_image_extension("/tog_vault/images/#{name}"), options)
   end
 
   def updated_stamp(model)
@@ -31,7 +31,7 @@ module Vault::BaseHelper
   end
 
   def timestamp(time)
-    format = I18n.t "tog_vault.timestamp_format"
+    format = "%I:%M <small>%p</small> on %B %d, %Y"
     time.strftime(format)
   end
 
@@ -45,7 +45,7 @@ module Vault::BaseHelper
   end
 
   def save_model_and_continue_editing_button(model)
-    submit_tag I18n.t "tog_vault.save_and_continue", :name => 'continue'
+    submit_tag I18n.t("tog_vault.save_and_continue", :name => 'continue')
   end
 
   private

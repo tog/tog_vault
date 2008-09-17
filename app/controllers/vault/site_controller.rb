@@ -29,7 +29,7 @@ class Vault::SiteController < ApplicationController
     unless @page.nil?
       #process_page(@page)
       #@performed_render = true
-      render :text => @page.content, :layout => "community"
+      render :text => @page.content #, :layout => "community"
     else
       render :template => 'site/not_found', :status => 404
     end

@@ -28,6 +28,8 @@ en-US:
       preview: preview
       pages: Pages
       modify: Modify
+      remove: Remove
+      add_child: Add Child
       no_pages: No Pages
       new_homepage: New Homepage
       remove_pages: Remove {{pages}}

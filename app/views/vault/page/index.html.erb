@@ -1,7 +1,7 @@
-<% include_javascript "vault/admin" %>
-<% include_javascript "vault/ruledtable" %>
-<% include_javascript "vault/pagetree" %>
-<% include_javascript "vault/string" %>
+<% include_javascript "/tog_vault/javascripts/admin" %>
+<% include_javascript "/tog_vault/javascripts/ruledtable" %>
+<% include_javascript "/tog_vault/javascripts/pagetree" %>
+<% include_javascript "/tog_vault/javascripts/string" %>
 
 <h2><%= I18n.t("tog_vault.page.pages") %></h2>
 
@@ -10,12 +10,13 @@
     <tr>
       <th scope="col"><%= I18n.t("tog_vault.page.page") %></th>
       <th scope="col"><%= I18n.t("tog_vault.page.status") %></th>
-      <th scope="col"><%= I18n.t("tog_vault.page.modify") %></th>
+      <th scope="col"><%= I18n.t("tog_vault.page.add_child") %></th>
+      <th scope="col"><%= I18n.t("tog_vault.page.remove") %></th>
     </tr>
   </thead>
   <tbody>
 <% if @homepage %>
-<%= render_node @homepage -%>
+  <%= render_node @homepage -%>
 <% else -%>
   <tr>
     <td colspan="4" class="note"><%= I18n.t("tog_vault.page.no_pages") %></td>
