@@ -113,7 +113,7 @@ var PageTree = Class.create(RuledTable, {
         
     new Ajax.Updater(
       row,
-      '/meta/cms/ui/pages/children/' + id + '/' + level,
+      '/admin/cms/ui/pages/children/' + id + '/' + level,
       {
         insertion: "after",
         method: "get",
