@@ -1,7 +1,7 @@
 class Page < ActiveRecord::Base
 
   class MissingRootPageError < StandardError
-    def initialize(message = "Database missing root page"[:db_missing_root_page]); super end
+    def initialize(message = I18n.t("tog_vault.page.db_missing_root_page")); super end
   end
 
   acts_as_taggable
@@ -28,15 +28,15 @@ class Page < ActiveRecord::Base
     transitions :from => [:published, :approved] , :to => :draft
   end
 
-  validates_presence_of :title, :slug, :breadcrumb, :message => "required"[:required]
+  validates_presence_of :title, :slug, :breadcrumb, :message => I18n.t("tog_vault.page.required")
 
-  validates_length_of :title, :maximum => 255, :message => "%d-character limit"[:character_limit]
-  validates_length_of :slug, :maximum => 100, :message => "%d-character limit"[:character_limit]
-  validates_length_of :breadcrumb, :maximum => 160, :message => "%d-character limit"[:character_limit]
+  validates_length_of :title, :maximum => 255, :message => I18n.t("tog_vault.page.character_limit", :count => 255)
+  validates_length_of :slug, :maximum => 100, :message => I18n.t("tog_vault.page.character_limit", :count => 100)
+  validates_length_of :breadcrumb, :maximum => 160, :message => I18n.t("tog_vault.page.character_limit", :count => 160)
 
-  validates_format_of :slug, :with => %r{^([-_.A-Za-z0-9]*|/)$}, :message => "invalid format"[:invalid_format]
-  validates_uniqueness_of :slug, :scope => :parent_id, :message => "slug already in use for child of parent"[:slug_used]
-  validates_numericality_of :id, :parent_id, :allow_nil => true, :only_integer => true, :message => "must be a number"[:must_be_number]
+  validates_format_of :slug, :with => %r{^([-_.A-Za-z0-9]*|/)$}, :message => I18n.t("tog_vault.page.invalid_format")
+  validates_uniqueness_of :slug, :scope => :parent_id, :message => I18n.t("tog_vault.page.slug_used")
+  validates_numericality_of :id, :parent_id, :allow_nil => true, :only_integer => true, :message => I18n.t("tog_vault.page.must_be_number")
    
   #add_index :fields => %w[title content state] , :strip_html => 1
 

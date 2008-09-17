@@ -7,7 +7,7 @@
 <% else -%>
           <%= expander %>
           <a href="<%= cms_page_edit_url(:id => page) %>" title="<%= page.url %>"><%= icon %> <%= node_title %></a> 
-          <a href="<%= cms_connect_url(page.url) %>"><%= "preview"[:preview] %></a>
+          <a href="<%= cms_connect_url(page.url) %>"><%= I18n.t("tog_vault.page.preview") %></a>
           <%= spinner %>
 <% end -%>
         </span>

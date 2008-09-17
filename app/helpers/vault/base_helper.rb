@@ -2,10 +2,10 @@ module Vault::BaseHelper
 
   #todo Allow title and co. customization
   def title
-    config['vault.admin.title'] || "Vault CMS"[:vault_title]
+    config['vault.admin.title'] || I18n.t("tog_vault.vault_title")
   end
   def subtitle
-    config['vault.admin.subtitle'] || "Your content on a shiny vault."[:vault_subtitle]
+    config['vault.admin.subtitle'] || I18n.t("tog_vault.vault_subtitle")
   end
 
   def image(name, options = {})
@@ -19,9 +19,9 @@ module Vault::BaseHelper
       time = (model.updated_at || model.created_at)
       if login or time
         html = "<p style='clear: left'><small>"
-        html << "Last updated "[:last_updated]
-        html << "by #{login} "[:by_user, {:login => login}] if login
-        html << "at #{time} "[:at_time, {:time => timestamp(time)}] if time
+        html << I18n.t("tog_vault.last_updated")
+        html << I18n.t("tog_vault.by_user", :user => login) if login
+        html << I18n.t("tog_vault.at_time", :time => timestamp(time)) if time
         html << "</small></p>"
         html
       end
@@ -31,21 +31,21 @@ module Vault::BaseHelper
   end
 
   def timestamp(time)
-    format = "%I:%M <small>%p</small> on %B %d, %Y"[:timestamp_format]
+    format = I18n.t "tog_vault.timestamp_format"
     time.strftime(format)
   end
 
   def save_model_button(model)
     label = if model.new_record?
-      "Create #{model.class.name}"[:create_model, {:model => model.class.name }]
+      I18n.t "tog_vault.create_model", :model => model.class.name
     else
-      "Save Changes"[:save_changes]
+      I18n.t "tog_vault.save_changes"
     end
     submit_tag label
   end
 
   def save_model_and_continue_editing_button(model)
-    submit_tag "Save and Continue Editing"[:save_and_continue], :name => 'continue'
+    submit_tag I18n.t "tog_vault.save_and_continue", :name => 'continue'
   end
 
   private

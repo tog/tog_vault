@@ -14,12 +14,12 @@
 <% form_for :page, :url => "" , :html => {:id =>"entry"} do |f| %>
     <% if @page.new_record? -%>
     <h2 id="new_page">
-      <%= "New Page"[:new_page] %> 
+      <%= I18n.t("tog_vault.page.new_page") %> 
       <%= link_to_function 'More', visual_effect(:toggle_slide , 'config'), :class => 'button configure', :title => "More Options" %>   
     </h2>
     <% else -%>
     <h2 id="edit_page">
-      <%= "Edit Page"[:edit_page] %> 
+      <%= I18n.t("tog_vault.page.edit_page") %> 
       <%= link_to_function 'More', visual_effect(:toggle_slide , 'config'), :class => 'button configure', :title => "More Options" %>   
       
     </h2>
@@ -29,15 +29,15 @@
           <legend>More options</legend>
           <div class="group">
             <label>
-              <%= "Slug"[:slug] %> <small>Auto-generated</small>
+              <%= I18n.t("tog_vault.page.slug") %> <small>Auto-generated</small>
               <%= text_field "page", "slug", {:size => nil} %>
             </label>
             <label>
-              <%= "Breadcrumb"[:breadcrumb] %> 
+              <%= I18n.t("tog_vault.page.breadcrumb") %> 
               <%= text_field "page", "breadcrumb", {:size => nil} %> 
             </label>
           </div>               
-          <label><%= "Tags"[:tags] %> 
+          <label><%= I18n.t("tog_vault.page.tags") %> 
             <%= text_field "page", "tag_list", {:size => nil} %>
           </label>
         </fieldset>
@@ -49,14 +49,14 @@
         <fieldset>
           <legend>Metadata</legend>
           <label>
-            <%= "Status"[:status] %>
+            <%= I18n.t("tog_vault.page.status") %>
             <%= select_tag "state", %{#{options_for_select(Page.states.inject({}) {|s, e| s[e]=e; s}, @page.new_record? ? :draft : @page.current_state)}} %> 
           </label>
         </fieldset>
       </fieldset>   
 
       <label for="page_title">
-        <%= "Page Title"[:page_title] %>
+        <%= I18n.t("tog_vault.page.page_title") %>
         <%= text_field "page", "title", {:size => nil} %>
       </label>
      

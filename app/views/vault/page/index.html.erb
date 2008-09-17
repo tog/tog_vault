@@ -3,14 +3,14 @@
 <% include_javascript "vault/pagetree" %>
 <% include_javascript "vault/string" %>
 
-<h2><%= "Pages"[:pages] %></h2>
+<h2><%= I18n.t("tog_vault.page.pages") %></h2>
 
 <table id="site-map" summary="Page hierarchy of the current site">
   <thead>
     <tr>
-      <th scope="col"><%= "Page"[:page] %></th>
-      <th scope="col"><%= "Status"[:status] %></th>
-      <th scope="col"><%= "Modify"[:modify] %></th>
+      <th scope="col"><%= I18n.t("tog_vault.page.page") %></th>
+      <th scope="col"><%= I18n.t("tog_vault.page.status") %></th>
+      <th scope="col"><%= I18n.t("tog_vault.page.modify") %></th>
     </tr>
   </thead>
   <tbody>
@@ -18,11 +18,11 @@
 <%= render_node @homepage -%>
 <% else -%>
   <tr>
-    <td colspan="4" class="note"><%= "No Pages"[:no_pages] %></td>
+    <td colspan="4" class="note"><%= I18n.t("tog_vault.page.no_pages") %></td>
   </tr>
 <% end -%>
   </tbody>
 </table>             
 <% unless @homepage -%>
-    <%= link_to image('new-homepage', :alt => "New Homepage"[:new_homepage]), cms_homepage_new_url %>
+    <%= link_to image('new-homepage', :alt => I18n.t("tog_vault.page.new_homepage")), cms_homepage_new_url %>
 <% end -%>
