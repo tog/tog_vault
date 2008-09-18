@@ -37,3 +37,4 @@ en-US:
       delete_pages_button: Delete {{pages}}
       cancel: Cancel
       page: Page
+      not_found: Page {{url}} not found
