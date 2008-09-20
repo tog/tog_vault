@@ -3,6 +3,13 @@ Vault
 
 A small CMS for your website static pages!
 
+== Included functionality
+
+* Pages
+* Children pages
+* Helper for include pages on views
+* HTML editor
+* Small publication workflow (draft-approved-published)
 
 Resources
 =========
