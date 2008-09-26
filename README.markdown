@@ -31,7 +31,7 @@ Install
 * Install plugin form source:
 
 <pre>
-ruby script/plugin install git@github.com:tog/tog_vault.git
+ruby script/plugin install git://github.com/tog/tog_vault.git
 </pre>
 
 * Generate installation migration:
