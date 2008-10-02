@@ -9,7 +9,7 @@ class Page < ActiveRecord::Base
   acts_as_tree :order => 'title ASC'
   belongs_to :created_by, :class_name => 'User'
   belongs_to :updated_by, :class_name => 'User'
-  
+
   acts_as_state_machine :initial => :draft
 
   state :draft
@@ -37,7 +37,7 @@ class Page < ActiveRecord::Base
   validates_format_of :slug, :with => %r{^([-_.A-Za-z0-9]*|/)$}, :message => I18n.t("tog_vault.page.invalid_format")
   validates_uniqueness_of :slug, :scope => :parent_id, :message => I18n.t("tog_vault.page.slug_used")
   validates_numericality_of :id, :parent_id, :allow_nil => true, :only_integer => true, :message => I18n.t("tog_vault.page.must_be_number")
-   
+
   #add_index :fields => %w[title content state] , :strip_html => 1
 
   def headers
@@ -63,7 +63,7 @@ class Page < ActiveRecord::Base
   def render
     content
   end
-    
+
   def find_by_url(url, clean = true)
     url = clean_url(url) if clean
     my_url = self.url
@@ -78,12 +78,11 @@ class Page < ActiveRecord::Base
       children.each do |child|
         found = child.find_by_url(url, clean)
         return found if found
-      end            
+      end
       #todo Manage the NotFoundCase without a FileNotFoundPage class page
       raise "Need to manage not found cases"
     end
   end
-
 
   def process(request, response)
     @request, @response = request, response
@@ -92,13 +91,13 @@ class Page < ActiveRecord::Base
     @response.body = render
     @request, @response = nil, nil
   end
-  
+
   class << self
     def find_by_url(url)
       root = find_by_parent_id(nil)
       raise MissingRootPageError unless root
       root.find_by_url(url)
-    end         
+    end
     # todo Allow customizations of the new pages
     def new_with_defaults
       page = new
@@ -107,7 +106,7 @@ class Page < ActiveRecord::Base
   private
 
   def clean_url(url)
-    "/#{ url.strip }/".gsub(%r{//+}, '/')
+    "#{ url.strip }/".gsub(%r{//+}, '/').gsub(%r{^/},'')
   end
 
 end
