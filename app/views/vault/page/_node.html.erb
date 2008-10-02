@@ -1,28 +1,22 @@
-    <tr id="page-<%= page.id %>" class="node level-<%= level %><%= children_class %>">
-      <td class="page-item" style="padding-left: <%= padding_left(level) %>px">
-        <span class="w1">
+<tr id="page-<%= page.id %>" class="node level-<%= level %><%= children_class %>">
+  <td class="page-item" style="padding-left: <%= padding_left(level) %>px">
+    <span class="w1">
 <% if simple -%>
-          <%= icon %>
-          <%= node_title %>
+      <%= icon %><%= node_title %>
 <% else -%>
-          <%= expander %>
-          <%= icon %><a href="<%= cms_page_edit_url(:id => page) %>" title="<%= page.url %>"><%= node_title %></a> 
-          <a href="<%= cms_connect_url(page.url) %>"><%= I18n.t("tog_vault.page.preview") %></a>
-          <%= spinner %>
+      <%= expander %>
+      <%= icon %><a href="<%= cms_page_edit_url(:id => page) %>" title="<%= page.url %>"><%= node_title %></a> 
+      <a href="<%= cms_connect_url(page.url) %>"><%= I18n.t("tog_vault.page.preview") %></a>
+      <%= spinner %>
 <% end -%>
-        </span>
-      </td>
+    </span>
+  </td>
 <% unless simple -%>
-      <td class="status <%= page.state %>-status"><%= page.state.to_s %></td>
-      <td><%= link_to image('add-child', :alt => 'add child'), cms_page_new_url(:parent_id => page) %> </td>
-      <td><%= link_to image('remove', :alt => 'remove page'), cms_page_remove_url(:id => page) %> </td>
+  <td class="status <%= page.state %>-status"><%= page.state.to_s %></td>
+  <td><%= link_to image('add-child', :alt => 'add child'), cms_page_new_url(:parent_id => page) %> </td>
+  <td><%= link_to image('remove', :alt => 'remove page'), cms_page_remove_url(:id => page) %> </td>
 <% end -%>
-    </tr>
-<% if expanded
-     page.children.each do |child|
--%>
-<%= render_node child, :level => level + 1, :simple => simple -%>
-<%
-     end
-   end
--%>
+</tr>
+<% page.children.each do |child| -%>
+  <%= render_node child, :level => level + 1, :simple => simple -%>
+<% end if expanded -%>

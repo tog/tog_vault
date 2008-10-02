@@ -35,17 +35,17 @@ module Vault::BaseHelper
     time.strftime(format)
   end
 
-  def save_model_button(model)
+  def save_model_button(model, options={})
     label = if model.new_record?
       I18n.t "tog_vault.create_model", :model => model.class.name
     else
       I18n.t "tog_vault.save_changes"
     end
-    submit_tag label
+    submit_tag label, options
   end
 
-  def save_model_and_continue_editing_button(model)
-    submit_tag I18n.t("tog_vault.save_and_continue", :name => 'continue')
+  def save_model_and_continue_editing_button(model, options={})
+    submit_tag(I18n.t("tog_vault.save_and_continue", :name => 'continue'), options)
   end
 
   private

@@ -10,69 +10,55 @@
   }
 </script>
 
-
 <% form_for :page, :url => "" , :html => {:id =>"entry"} do |f| %>
-    <% if @page.new_record? -%>
-    <h2 id="new_page">
-      <%= I18n.t("tog_vault.page.new_page") %> 
-      <%= link_to_function 'More', visual_effect(:toggle_slide , 'config'), :class => 'button configure', :title => "More Options" %>   
-    </h2>
-    <% else -%>
-    <h2 id="edit_page">
-      <%= I18n.t("tog_vault.page.edit_page") %> 
-      <%= link_to_function 'More', visual_effect(:toggle_slide , 'config'), :class => 'button configure', :title => "More Options" %>   
-      
-    </h2>
-    <% end -%>
-    <div id="config" style="display:none">
-        <fieldset>
-          <legend>More options</legend>
-          <div class="group">
-            <label>
-              <%= I18n.t("tog_vault.page.slug") %> <small>Auto-generated</small>
-              <%= text_field "page", "slug", {:size => nil} %>
-            </label>
-            <label>
-              <%= I18n.t("tog_vault.page.breadcrumb") %> 
-              <%= text_field "page", "breadcrumb", {:size => nil} %> 
-            </label>
-          </div>               
-          <label><%= I18n.t("tog_vault.page.tags") %> 
-            <%= text_field "page", "tag_list", {:size => nil} %>
-          </label>
-        </fieldset>
-    </div> 	    
-    
-
-
+  <div class="titleB">
+  <% if @page.new_record? -%>
+    <%= I18n.t("tog_vault.page.new_page") %>
+  <% else -%>
+    <%= I18n.t("tog_vault.page.edit_page") %>
+  <% end -%>
+    <%= link_to_function 'More', visual_effect(:toggle_slide , 'config'), :class => 'button', :title => "More Options" %>
+  </div>
+  <div id="config" class="fields" style="display:none">
     <fieldset>
+      <legend>More options</legend>
+      <p>
+        <label for="page_slug"><%= I18n.t("tog_vault.page.slug") %> <span class="helpinfo">Auto-generated</span></label>
+        <%= text_field "page", "slug", :class => "fieldbox wide"%>
+      </p>
+      <p>
+        <label for="page_breadcrumb"><%= I18n.t("tog_vault.page.breadcrumb") %></label>
+        <%= text_field "page", "breadcrumb", :class => "fieldbox wide" %>
+      </p>
+      <p>
+        <label for="page_tag_list"><%= I18n.t("tog_vault.page.tags") %></label>
+        <%= text_field "page", "tag_list", :class => "fieldbox wide" %>
+      </p>
+    </fieldset>
+  </div>
 
-      <fieldset>
-        <fieldset>
-          <legend>Metadata</legend>
-          <label>
-            <%= I18n.t("tog_vault.page.status") %>
-            <%= select_tag "state", %{#{options_for_select(Page.states.inject({}) {|s, e| s[e]=e; s}, @page.new_record? ? :draft : @page.current_state)}} %> 
-          </label>
-        </fieldset>
-      </fieldset>   
+  <fieldset>
+    <legend>Metadata</legend>
+    <div class="fields">
+      <label for="state"><%= I18n.t("tog_vault.page.status") %></label>
+      <%= select_tag "state", %{#{options_for_select(Page.states.inject({}) {|s, e| s[e]=e; s}, @page.new_record? ? :draft : @page.current_state)}} %>
+    </div>
+  </fieldset>
 
-      <label for="page_title">
-        <%= I18n.t("tog_vault.page.page_title") %>
-        <%= text_field "page", "title", {:size => nil} %>
-      </label>
-     
-      <label>
-        Body
-        <%= render :partial => 'part', :locals => { :content => @page } %>
-      </label>
-
+  <fieldset>
+    <legend>Text</legend>
+    <div class="fields">
+      <label for="page_title"><%= I18n.t("tog_vault.page.page_title") %>
+      <%= text_field "page", "title", :class => "fieldbox", :style=>"width:80%" %></label>
+      
+      <%= render :partial => 'part', :locals => { :content => @page } %>
 
       <%= updated_stamp @page %>
-
-      <%= save_model_button(@page) %> <%= save_model_and_continue_editing_button(@page) %>
-
-    </fieldset>
+    </div>
+  </fieldset>
+  <div class="actions">
+    <%= save_model_button(@page, :class=>"button mainaction") %> <%= save_model_and_continue_editing_button(@page, :class=>"button") %>
+  </div>
 <% end %>
 
 <script type="text/javascript">
