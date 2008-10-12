@@ -60,10 +60,14 @@ end
 map.routes_from_plugin 'tog_vault'
 </pre> 
 
-* And finally...
+* And finally you can migrate the db to add the tog_vault specific tables and copy its resources to public directory:
 
 <pre> 
 rake db:migrate
+</pre> 
+
+<pre> 
+rake tog:plugins:copy_resource
 </pre> 
 
 More
