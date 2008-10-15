@@ -1,14 +1,16 @@
 module Version
-  Major = '0'
-  Minor = '2'
-  Tiny  = '1'
-  Module= 'tog_vault'
+  MAJOR = 0
+  MINOR = 3
+  TINY  = 0
+  MODULE = "tog_vault"
+  STRING = [MAJOR, MINOR, TINY].join('.')
+
   class << self
     def to_s
-      [Major, Minor, Tiny].join('.')
+      STRING
     end
     def full_version
-      "#{Module} #{[Major, Minor, Tiny].join('.')}"
+      "#{MODULE} #{STRING}"
     end
     alias :to_str :to_s
   end
