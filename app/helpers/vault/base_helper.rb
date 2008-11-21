@@ -45,7 +45,7 @@ module Vault::BaseHelper
   end
 
   def save_model_and_continue_editing_button(model, options={})
-    submit_tag(I18n.t("tog_vault.save_and_continue", :name => 'continue'), options)
+    submit_tag(I18n.t("tog_vault.save_and_continue"), options.merge({:name => 'continue'}))
   end
 
   private
