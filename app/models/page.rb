@@ -39,7 +39,11 @@ class Page < ActiveRecord::Base
   validates_numericality_of :id, :parent_id, :allow_nil => true, :only_integer => true, :message => I18n.t("tog_vault.page.must_be_number")
 
   #add_index :fields => %w[title content state] , :strip_html => 1
-
+  
+  def self.site_search(query, search_options={})
+    Page.find(:all, :conditions => ["content like ?", '%'+query+'%'])
+  end
+  
   def headers
     { 'Status' => ActionController::Base::DEFAULT_RENDER_STATUS_CODE }
   end
