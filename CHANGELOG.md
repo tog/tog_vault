@@ -1,5 +1,8 @@
 Edge
 ----
+
+0.4.0
+----
 * Ticket #107. error in save and continue editing
 0.3.0
 ----
