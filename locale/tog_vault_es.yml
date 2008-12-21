@@ -1,0 +1,40 @@
+# {{xxx}}
+es:
+  tog_vault:
+    vault_title: Vault CMS
+    vault_subtitle: Minúsculo CMS.
+    last_updated: Ultima actualización
+    by_user: por {{user}}
+    at_time: el {{time}}
+    timestamp_format: "%I:%M <small>%p</small> el %B %d, %Y"
+    save_and_continue: Guardar y continuar editando
+    save_changes: Guardar cambios
+    create_model: Crear {{model}}
+    
+    page:
+      db_missing_root_page: No se encuetra la página raíz en la base de datos
+      required: requirido
+      character_limit: %d-límite de caracteres
+      invalid_format: formato inválido
+      slug_used: ya se ha usado ese slug para otra página al mismo nivel
+      must_be_number: debe ser un número
+      new_page: Nueva página
+      edit_page: Editar página
+      slug: Slug
+      breadcrumb: Camino de migras
+      tags: Tags
+      status: Estado
+      page_title: Título de la página
+      preview: vista previa
+      pages: Páginas
+      modify: Modificar
+      remove: Eliminar
+      add_child: Añadir hijo
+      no_pages: Sin páginas
+      new_homepage: Nueva página raíz
+      remove_pages: Eliminar {{pages}}
+      are_you_sure_remove_pages: Está seguro de querer <strong class='warning'>eliminar permanentemente remove</strong> las siguientes páginas {{pages}}?
+      delete_pages_button: Eliminar {{pages}}
+      cancel: Cancelar
+      page: Página
+      not_found: Página {{url}} no encontrada
