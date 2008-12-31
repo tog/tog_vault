@@ -11,3 +11,5 @@ end
 Tog::Plugins.helpers Vault::PageHelper
 
 Tog::Interface.sections(:admin).add "CMS", "/admin/cms"
+
+Tog::Search.sources << "Page"
