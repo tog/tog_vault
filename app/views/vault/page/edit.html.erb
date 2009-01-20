@@ -1,14 +1,5 @@
-<% include_javascript "/tog_vault/javascripts/fckeditor/fckeditor" %>
-<% include_javascript "/tog_vault/javascripts/admin" %>
-<% include_javascript "/tog_vault/javascripts/string" %>
+<% include_javascript :fckeditor %>
 
-<script type="text/javascript">
-  window.onload = function() {
-    var oFCKeditor = new FCKeditor( 'page[content]' ) ;
-    oFCKeditor.BasePath = '/tog_vault/javascripts/fckeditor/' ;
-    oFCKeditor.ReplaceTextarea() ;
-  }
-</script>
 
 <% form_for :page, :url => "" , :html => {:id =>"entry"} do |f| %>
   <div class="titleB">

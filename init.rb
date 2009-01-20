@@ -1,6 +1,8 @@
 require_plugin 'tog_core'
 require_plugin 'acts_as_tree'
 require_plugin 'acts_as_state_machine'
+require_plugin 'fckeditor'
+
 
 Tog::Plugins.settings :tog_vault, :public_prefix => "cms"
 
