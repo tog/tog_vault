@@ -22,6 +22,7 @@ In case you haven't installed any of them previously you'll need the following p
 * [acts\_as\_taggable\_on\_steroids](https://github.com/tog/tog/wikis/3rd-party-plugins-acts_as_taggable_on_steroids)
 * [acts\_as\_tree](https://github.com/tog/tog/wikis/3rd-party-plugins-acts_as_tree)
 * [acts\_as\_state\_machine](https://github.com/tog/tog/wikis/3rd-party-plugins-acts_as_state_machine)
+* [fckeditor](http://wiki.github.com/tog/tog/3rd-party-plugins-fckeditor)
 
 Follow each link above for a short installation guide incase you have to install them.			
 
