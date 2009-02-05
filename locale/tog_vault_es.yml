@@ -1,5 +1,8 @@
 # {{xxx}}
 es:
+  interface:
+    admin:
+      cms: CMS  
   tog_vault:
     vault_title: Vault CMS
     vault_subtitle: Minúsculo CMS.

@@ -1,5 +1,8 @@
 # {{xxx}}
 en:
+  interface:
+    admin:
+      cms: CMS  
   tog_vault:
     vault_title: Vault CMS
     vault_subtitle: Your content on a shiny vault.
