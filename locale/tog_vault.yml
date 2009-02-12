@@ -2,7 +2,7 @@
 en:
   interface:
     admin:
-      cms: CMS  
+      cms: CMS
   tog_vault:
     vault_title: Vault CMS
     vault_subtitle: Your content on a shiny vault.
@@ -13,11 +13,11 @@ en:
     save_and_continue: Save and Continue Editing
     save_changes: Save Changes
     create_model: Create {{model}}
-    
+
     page:
       db_missing_root_page: Database missing root page
       required: required
-      character_limit: %d-character limit
+      character_limit: "{{count}}-character limit"
       invalid_format: invalid format
       slug_used: slug already in use for child of parent
       must_be_number: must be a number

@@ -2,7 +2,7 @@
 es:
   interface:
     admin:
-      cms: CMS  
+      cms: CMS
   tog_vault:
     vault_title: Vault CMS
     vault_subtitle: Minúsculo CMS.
@@ -13,11 +13,11 @@ es:
     save_and_continue: Guardar y continuar editando
     save_changes: Guardar cambios
     create_model: Crear {{model}}
-    
+
     page:
       db_missing_root_page: No se encuetra la página raíz en la base de datos
       required: requirido
-      character_limit: %d-límite de caracteres
+      character_limit: "{{count}}-límite de caracteres"
       invalid_format: formato inválido
       slug_used: ya se ha usado ese slug para otra página al mismo nivel
       must_be_number: debe ser un número
