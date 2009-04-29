@@ -41,7 +41,7 @@ ruby script/plugin install git://github.com/tog/tog_vault.git
 ruby script/generate migration install_vault
 </pre>
 
-	  with the following content:
+* Add the following content to the migration:
 
 <pre>
 class InstallVault < ActiveRecord::Migration
@@ -68,7 +68,7 @@ rake db:migrate
 </pre> 
 
 <pre> 
-rake tog:plugins:copy_resource
+rake tog:plugins:copy_resources
 </pre> 
 
 More
