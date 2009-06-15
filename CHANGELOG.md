@@ -1,6 +1,9 @@
 Edge
 ----
+* New vault/site/show_page.html.erb view
 * New installation template
+* Changed Test::Unit to ActiveSupport
+* Renamed routes.rb to desert_routes.rb
 
 0.5.0
 ----
