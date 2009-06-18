@@ -1,5 +1,8 @@
 Edge
 ----
+
+0.5.1
+----
 * New vault/site/show_page.html.erb view
 * New installation template
 * Changed Test::Unit to ActiveSupport
