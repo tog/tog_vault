@@ -1,6 +1,9 @@
 Edge
 ----
 
+0.5.2
+----
+
 0.5.1
 ----
 * New vault/site/show_page.html.erb view
