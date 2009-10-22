@@ -10,23 +10,22 @@ class Page < ActiveRecord::Base
   belongs_to :created_by, :class_name => 'User'
   belongs_to :updated_by, :class_name => 'User'
 
-  acts_as_state_machine :initial => :draft
-
-  state :draft
-  state :approved
-  state :published
-
-  event :published do
+  include AASM
+  aasm_column :state
+  aasm_initial_state :draft
+  aasm_state :draft
+  aasm_state :approved
+  aasm_state :published
+  aasm_event :published do
     transitions :from => [:draft, :approved] , :to => :published
   end
-
-  event :approved do
+  aasm_event :approved do
     transitions :from => [:draft, :published] , :to => :approved
   end
-
-  event :draft do
-    transitions :from => [:published, :approved] , :to => :draft
+  aasm_event :draft do
+    transitions :from => [:draft, :published, :approved] , :to => :draft
   end
+
 
   validates_presence_of :title, :slug, :breadcrumb, :message => I18n.t("tog_vault.page.required")
 

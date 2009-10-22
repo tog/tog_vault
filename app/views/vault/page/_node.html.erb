@@ -12,7 +12,7 @@
     </span>
   </td>
 <% unless simple -%>
-  <td class="status <%= page.state %>-status"><%= page.state.to_s %></td>
+  <td class="status <%= page.state %>-status"><%= I18n.t("tog_vault.page.states.#{page.state.to_s}") %></td>
   <td><%= link_to image('add-child', :alt => 'add child'), cms_page_new_url(:parent_id => page) %> </td>
   <td><%= link_to image('remove', :alt => 'remove page'), cms_page_remove_url(:id => page) %> </td>
 <% end -%>

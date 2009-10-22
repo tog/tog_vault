@@ -1,6 +1,10 @@
 Edge
 ----
 
+* Migrated from acts_as_state_machine to AASM gem
+* i18n for page editing and page states
+* Template updated to use new generator for migrations
+
 0.5.4
 ----
 

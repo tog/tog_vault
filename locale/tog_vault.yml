@@ -13,7 +13,11 @@ en:
     save_and_continue: Save and Continue Editing
     save_changes: Save Changes
     create_model: Create {{model}}
-
+    admin:
+      page:
+        saved: "Your page has been saved below."
+        validation_errors: "Validation errors occurred while processing this form. Please take a moment to review the form and correct any input errors before continuing."
+        conflict: "{{model_name}} has been modified since it was last loaded. Changes cannot be saved without potentially losing data."
     page:
       db_missing_root_page: Database missing root page
       required: required
@@ -41,3 +45,7 @@ en:
       cancel: Cancel
       page: Page
       not_found: Page {{url}} not found
+      states:
+        draft: Draft
+        approved: Approved
+        published: Published

@@ -66,15 +66,15 @@ class Vault::PageController < Admin::BaseController
   end
 
   def announce_saved(message = nil)
-    flash[:notice] = message || "Your page has been saved below."
+    flash[:notice] = message || I18n.t("tog_vault.admin.page.saved")
   end
 
   def announce_validation_errors
-    flash[:error] = "Validation errors occurred while processing this form. Please take a moment to review the form and correct any input errors before continuing."
+    flash[:error] = I18n.t("tog_vault.admin.page.validation_errors")
   end
 
   def announce_update_conflict
-    flash[:error] = "#{humanized_model_name} has been modified since it was last loaded. Changes cannot be saved without potentially losing data."
+    flash[:error] = I18n.t("tog_vault.admin.page.conflict", :model_name => humanized_model_name)
   end
 
   def announce_pages_removed(count)

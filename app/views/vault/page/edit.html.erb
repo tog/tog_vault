@@ -33,7 +33,7 @@
     <legend>Metadata</legend>
     <div class="fields">
       <label for="state"><%= I18n.t("tog_vault.page.status") %></label>
-      <%= select_tag "state", %{#{options_for_select(Page.states.inject({}) {|s, e| s[e]=e; s}, @page.new_record? ? :draft : @page.current_state)}} %>
+      <%= select_tag "state", %{#{options_for_select(Page.aasm_states_for_select, @page.new_record? ? :draft : @page.aasm_current_state)}} %>
     </div>
   </fieldset>
 

@@ -13,7 +13,11 @@ es:
     save_and_continue: Guardar y continuar editando
     save_changes: Guardar cambios
     create_model: Crear {{model}}
-
+    admin:
+      page:
+        saved: "La página se ha guardado correctamente."
+        validation_errors: "Se han producido errores de validación. Por favor, revisa el formulario y corrige dichos errores antes de continuar."
+        conflict: "La {{model_name}} ha sido modificada por otro usuario. No se pueden guardar los cambios sin una potencial perdida de información."
     page:
       db_missing_root_page: No se encuetra la página raíz en la base de datos
       required: requirido
@@ -41,3 +45,7 @@ es:
       cancel: Cancelar
       page: Página
       not_found: Página {{url}} no encontrada
+      states:
+        draft: Borrador
+        approved: Aprobada
+        published: Publicada      
