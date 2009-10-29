@@ -1,0 +1,50 @@
+pt-BR:
+  interface:
+    admin:
+      cms: CMS
+  tog_vault:
+    vault_title: Vault CMS
+    vault_subtitle: Seu conteúdo em um lugar brilhante.
+    last_updated: Última atualização
+    by_user: por {{user}}
+    at_time: em {{time}}
+    timestamp_format: "%I:%M <small>%p</small> em %B %d, %Y"
+    save_and_continue: Salvar e continuar editando
+    save_changes: Salvar alterações
+    create_model: Criar {{model}}
+    admin:
+      page:
+        saved: "Sua página abaixo foi salva."
+        validation_errors: "Erros de validação ocorreram no processo desse formulário. Por favor, revise o formulário e corrija quaisquer erros antes de continuar."
+        conflict: "{{model_name}} foi modificado depois de ser carregado. As alterações não podem ser salvas sem o risco de perda de dados."
+    page:
+      db_missing_root_page: Página principal não encontrada
+      required: obrigatório
+      character_limit: "{{count}} caracteres no máximo"
+      invalid_format: formato inválido
+      slug_used: esse slug já está sendo usado em uma página do mesmo nível
+      must_be_number: deve ser um membro
+      new_page: Nova página
+      edit_page: Editar página
+      slug: Slug
+      breadcrumb: Breadcrumb
+      tags: Tags
+      status: Status
+      page_title: Título da página
+      preview: preview
+      pages: Páginas
+      modify: Modificar
+      remove: Remover
+      add_child: Adicionar filho
+      no_pages: Sem páginas
+      new_homepage: Nova página inicial
+      remove_pages: Remover {{pages}}
+      are_you_sure_remove_pages: Tem certeza que quer <strong class='warning'>remover permanentemente</strong> a seguinte página {{pages}}?
+      delete_pages_button: Apagar {{pages}}
+      cancel: Cancelar
+      page: Página
+      not_found: Página {{url}} não encontrada
+      states:
+        draft: Rascunho
+        approved: Aprovado
+        published: Publicado
