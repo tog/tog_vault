@@ -37,7 +37,7 @@ module Vault::NodeHelper
             :class => "expander", :alt => 'toggle children',
             :title => '')
     else
-      ""
+      "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
     end
   end
 

@@ -4,6 +4,7 @@ Edge
 * Migrated from acts_as_state_machine to AASM gem
 * i18n for page editing and page states
 * Template updated to use new generator for migrations
+* Better indentation for node tree
 
 0.5.4
 ----
